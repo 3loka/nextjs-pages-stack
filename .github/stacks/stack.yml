@@ -43,9 +43,6 @@ configs:
         allowed-branch-rules:
           - main
           - releases/*
-        
-github-apps:
-- slug: greenkeeper
 
 init:
   uses: "stack-init.yaml"
