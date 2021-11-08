@@ -1,0 +1,52 @@
+version: 0.1.0                                            
+
+name: Test stack to Deploy Next.js site to GitHub pages  # stack name 
+description: Description of the test stack               # stack description
+
+branding:                                                # stack branding 
+ icon: 'package'
+ color: 'black'
+
+inputs:                                                  # stack inputs 
+  - name: NODE_VERSION                                   # stack input name
+    default: v12.22.4                                    # stack input default value provided
+    description: NODE_VERSION for nodejs stack           # stack input description
+    validvalues:                                         # stack input valid values that can be selected
+    - v12.22.4
+    - v14.17.4
+    
+  - name: GITHUB_PAT
+    description: GitHub PAT with repo and workflow permissions
+    required: true
+    is-secret: true
+
+configs:
+  repo-metadata:
+    parameters:
+      description: 'NextJS app on GH pages'
+      secrets: 
+      - name: GH_PAT
+        value: ${{inputs.GITHUB_PAT}}
+      topics:
+      - nextjs
+      - github-pages
+
+  branches:
+    - name: main
+      parameters:
+        enforce-admins: true
+        required-pull-request-reviews:
+          dismiss-stale-reviews: true
+          required-approving-review-count: 1
+          require-code-owner-reviews: true
+
+  environments:
+    - name: development
+      parameters:
+        protected-branches: true
+        
+github-apps:
+- slug: greenkeeper
+
+init:
+  uses: "stack-init.yaml"
