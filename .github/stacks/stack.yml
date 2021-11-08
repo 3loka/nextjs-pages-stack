@@ -35,10 +35,6 @@ configs:
     - name: main
       parameters:
         enforce-admins: true
-        required-pull-request-reviews:
-          dismiss-stale-reviews: true
-          required-approving-review-count: 0
-          require-code-owner-reviews: false
 
   environments:
     - name: development
