@@ -1,7 +1,7 @@
 version: 0.1.0                                            
 
-name: Deploy Next.js site to GitHub pages  # stack name 
-description: A stack to deploy a nextjs based website to Github Pages               # stack description
+name: Deploy a Next.js site to GitHub pages  
+description: A stack to deploy a nextjs based website to Github Pages               
 
 branding:                                                # stack branding 
  icon: 'package'
