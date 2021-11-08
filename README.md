@@ -1,3 +1,6 @@
+[![Use this template](https://github.com/stack-instance/badge.svg)](https://github.com/stack-instance?stack_template_owner=3loka&stack_template_repo=test-stack-1)
+                
+                
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" alt="Hugo" width="100" height ="50"/>   <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/OCR-A_char_Plus_Sign.svg" alt="Hugo" width="50" height ="50"/>   <img src="./.github/stacks/githubpages.png" alt="GitHub Pages" />
 
 <p>
