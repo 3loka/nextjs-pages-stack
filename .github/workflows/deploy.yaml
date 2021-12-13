@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: use node.js ${{ env.NODE_VERSION }}
+      - name: use node.js 
         uses: actions/setup-node@v1
         with:
           node-version-file: '.nvmrc'
@@ -41,7 +41,7 @@ jobs:
         uses: actions/github-script@v4
         continue-on-error: true # API fails when the GitHub pages is already deployed
         with:
-          github-token: ${{ secrets.GH_PAT }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             github.repos.createPagesSite({
               owner: context.repo.owner,
@@ -57,7 +57,7 @@ jobs:
           echo "Website URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
 
       - name: Wait for website to come online
-        timeout-minutes: 5
+        timeout-minutes: 10
         id: get-url
         run: |
           echo "Waiting for the website to come alive..."
