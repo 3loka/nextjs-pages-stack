@@ -69,7 +69,7 @@ jobs:
         uses: actions/github-script@v4
         continue-on-error: true # API fails when the GitHub pages is already deployed
         with:
-          github-token: ${{ secrets.GH_PAT }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             github.repos.createPagesSite({
               owner: context.repo.owner,
