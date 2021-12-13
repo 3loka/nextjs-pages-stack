@@ -25,19 +25,13 @@ jobs:
         with:
           node-version: ${{ github.event.inputs.NODE_VERSION }}
           registry-url: https://registry.npmjs.org/
-          
-#       - name: substitute user inputs in the workflow files
-#         uses: microsoft/variable-substitution@v1 
-#         with:
-#           files: '.github/workflows/build.yaml, .github/workflows/deploy.yaml'
-#         env:
-#           env.NODE_VERSION: '${{ github.event.inputs.NODE_VERSION }}'
 
       - name: stacks framework code generation
         run: |
           npx create-next-app nextjs-scaffold --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"
           cp -r nextjs-scaffold/* .
           rm -rf nextjs-scaffold
+          echo ${{ github.event.inputs.NODE_VERSION }} > .nmvrc
           
       - name: Configure git
         run: |
