@@ -23,11 +23,6 @@ configs:
       - nextjs
       - github-pages
 
-  branches:
-    - name: main
-      parameters:
-        enforce-admins: true
-
   environments:
     - name: development
       parameters:
