@@ -31,7 +31,7 @@ jobs:
           npx create-next-app nextjs-scaffold --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"
           cp -r nextjs-scaffold/* .
           rm -rf nextjs-scaffold
-          echo ${{ github.event.inputs.NODE_VERSION }} > .nmvrc
+          echo ${{ github.event.inputs.NODE_VERSION }} > .nvmrc
           
       - name: Configure git
         run: |
