@@ -1,7 +1,7 @@
 version: 0.1.0                                            
 
-name: Deploy a Next.js site to GitHub pages  
-description: A stack to deploy a nextjs based website to Github Pages               
+name: Deploy a NextJS website to GitHub Pages  
+description: A GitHub Stack to develop, preview, and deploy a NextJS website to Github Pages in seconds.
 
 branding:                                                # stack branding 
  icon: 'package'
@@ -10,7 +10,7 @@ branding:                                                # stack branding
 inputs:                                                  # stack inputs 
   - name: NODE_VERSION                                   # stack input name
     default: v12.22.4                                    # stack input default value provided
-    description: NODE_VERSION for nodejs stack           # stack input description
+    description: Node.js version.                        # stack input description
     validvalues:                                         # stack input valid values that can be selected
     - v12.22.4
     - v14.17.4
@@ -18,7 +18,7 @@ inputs:                                                  # stack inputs
 configs:
   repo-metadata:
     parameters:
-      description: 'NextJS app on GH pages'
+      description: 'NextJS app on GitHub pages'
       topics:
       - nextjs
       - github-pages
